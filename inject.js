@@ -12,7 +12,6 @@
     document.body.style.cursor = "none"
 
 
-
     var mouseX = (event) =>
     {
         return event.clientX
@@ -35,19 +34,12 @@
 
     var count = 0;
     var j =0;
+    var currentWidth = 1;
+
+    imageElement.style.transition =  "transform 500ms"
     document.body.addEventListener('click', e =>{
-        count+=1
-        if (count == 5 && imageElement.width < 500) {
-            var animation = setInterval(function(){
-                j += 1;
-                if (j === 10) {
-                    clearInterval(animation);
-                    j = 0;
-                }
-                imageElement.width = imageElement.width * 1.1;
-                }, 10);
-            count = 0;
-        }
+        currentWidth *= 1.5;
+        imageElement.style.transform = "scale("+ currentWidth + ")"
 
     })
 })();

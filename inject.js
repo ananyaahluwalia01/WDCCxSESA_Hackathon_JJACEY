@@ -62,18 +62,22 @@
     })
 
     // grows instantly after one click on canvas
-    if (window.location.href.indexOf("canvas") != -1){
-        document.body.addEventListener('click', animationOnCanvas, true);
+    if (window.location.href.indexOf("auckland.ac.nz") != -1){
+        document.body.addEventListener('click', animationOnCanvas);
         
+        j = 0;
          var animationOnCanvas = setInterval(function(){
             j += 1;
-            if (j === 30) {
-                clearInterval(animation);
+            if (j === 125) {
+                clearInterval(animationOnCanvas);
                 j = 0;
             }
             imageElement.width = imageElement.width * 1.04;
             }, 20);
     }
+
+   // play sound onClick 
+
 
 })();
 

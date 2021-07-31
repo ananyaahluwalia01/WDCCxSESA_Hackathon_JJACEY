@@ -5,6 +5,7 @@
     imageElement.width = 25
     imageElement.style.position = "fixed"
     imageElement.style.pointerEvents = "none"
+    imageElement.style.zIndex = "9999"
 
     document.body.append(imageElement)
 

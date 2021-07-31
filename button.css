@@ -1,3 +1,15 @@
+body {
+  background-color: #f8d862;
+}
+h1 {
+  text-align: center;
+  color: #ef4f1a;
+}
+h2 {
+  color: #ef4f1a;
+  font-size: 10px;
+  text-align: center;
+}
 button {
   height: 30px;
   width: 100px;
@@ -5,6 +17,7 @@ button {
   margin: 10px;
   border: none;
   border-radius: 2px;
+  color: #ef4f1a;
 }
 
 button.current {
@@ -12,5 +25,5 @@ button.current {
 }
 
 button:hover {
-  color: black;
+  color: #d23f0f;
 }

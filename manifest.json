@@ -8,10 +8,11 @@
     "persistent": true
   },
   "permissions": [
+    "activeTab",
+    "tabs",
     "<all_urls>"
   ],
   "browser_action": {
-
     "default_icon": "quacker.PNG"
   }
 }

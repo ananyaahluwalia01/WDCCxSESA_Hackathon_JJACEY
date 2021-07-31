@@ -24,26 +24,22 @@
     var ducky = document.getElementById("duckycursor")
 
     document.body.addEventListener('mousemove', e => {
-        ducky.style.top = mouseY(e) + "px"
-        ducky.style.left = mouseX(e) + "px"
+        ducky.style.top = mouseY(e) - imageElement.height/2 + "px"
+        ducky.style.left = mouseX(e) - imageElement.width/2 + "px"
     })
 
 
-
     alert('You are about to be ducked!');
+
+    var count = 0;
+    document.body.addEventListener('click', e =>{
+        count+=1
+        if (count == 5){
+            imageElement.width = imageElement.width * 1.5
+            count = 0
+        }
+
+    })
 })();
 
 
-// (function() {
-//
-// 	// just place a div at top right
-// 	var div = document.createElement('div');
-// 	div.style.position = 'fixed';
-// 	div.style.top = 0;
-// 	div.style.right = 0;
-// 	div.textContent = 'Injected!';
-// 	document.body.appendChild(div);
-//
-// 	alert('inserted self... giggity');
-//
-// })();

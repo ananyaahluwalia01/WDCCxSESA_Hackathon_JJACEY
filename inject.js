@@ -33,7 +33,7 @@
     alert('You are about to be ducked!');
 })();
 
- 
+
 // (function() {
 //
 // 	// just place a div at top right

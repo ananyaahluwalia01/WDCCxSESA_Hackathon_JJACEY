@@ -29,18 +29,31 @@
         ducky.style.left = mouseX(e) - imageElement.width/2 + "px"
     })
 
-
     alert('You are about to be ducked!');
 
+    //animation for size increase
+
     var count = 0;
+    var j =0;
     document.body.addEventListener('click', e =>{
         count+=1
-        if (count == 5){
-            imageElement.width = imageElement.width * 1.5
-            count = 0
+        if (count == 5 && imageElement.width < 500) {
+            var animation = setInterval(function(){
+                j += 1;
+                if (j === 10) {
+                    clearInterval(animation);
+                    j = 0;
+                }
+                imageElement.width = imageElement.width * 1.1;
+                }, 10);
+            count = 0;
         }
 
     })
 })();
 
+// to do
+/*find out how to get it running without having to open the extension pop up
+
+add condition for running it differently depending on the website */
 

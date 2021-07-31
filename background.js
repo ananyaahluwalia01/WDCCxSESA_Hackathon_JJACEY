@@ -6,4 +6,6 @@ chrome.browserAction.onClicked.addListener(function (tab) {
             file: 'inject.js'
         }
     );
-});
+}
+);
+

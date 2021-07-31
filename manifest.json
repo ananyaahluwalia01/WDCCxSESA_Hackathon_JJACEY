@@ -12,6 +12,12 @@
     "tabs",
     "<all_urls>"
   ],
+  "content_scripts": [
+    {
+      "js": ["inject.js"],
+      "matches": ["*://*/*"]
+    }
+  ],
   "browser_action": {
     "default_icon": "quacker.PNG"
   }

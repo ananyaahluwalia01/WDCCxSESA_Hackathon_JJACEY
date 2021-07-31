@@ -1,3 +1,23 @@
+body {
+  background-color: #f8d862;
+  font-family: 'Chelsea Market';
+}
+h1 {
+  text-align: center;
+  color: #ef4f1a;
+}
+
+img {
+  width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+h2 {
+  color: #ef4f1a;
+  font-size: 10px;
+  text-align: center;
+}
 button {
   height: 30px;
   width: 100px;
@@ -5,6 +25,8 @@ button {
   margin: 10px;
   border: none;
   border-radius: 2px;
+  color: #ef4f1a;
+  font-family: 'Chelsea Market';
 }
 
 button.current {
@@ -12,5 +34,5 @@ button.current {
 }
 
 button:hover {
-  color: black;
+  color: #d23f0f;
 }

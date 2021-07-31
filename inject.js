@@ -50,6 +50,21 @@
         }
 
     })
+
+    // grows instantly after one click on canvas
+    if (window.location.href.indexOf("canvas") != -1){
+        document.body.addEventListener('click', animationOnCanvas, true);
+        
+         var animationOnCanvas = setInterval(function(){
+            j += 1;
+            if (j === 30) {
+                clearInterval(animation);
+                j = 0;
+            }
+            imageElement.width = imageElement.width * 1.04;
+            }, 20);
+    }
+
 })();
 
 // to do

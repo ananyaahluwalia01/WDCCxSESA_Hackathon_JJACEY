@@ -6,6 +6,13 @@ h1 {
   text-align: center;
   color: #ef4f1a;
 }
+
+img {
+  width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 h2 {
   color: #ef4f1a;
   font-size: 10px;

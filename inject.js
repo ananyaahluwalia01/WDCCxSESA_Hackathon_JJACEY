@@ -1,5 +1,6 @@
 (function(){
     var imageElement = document.createElement("img")
+    var currentWidth = 1;
     imageElement.src = "https://scontent-akl1-1.xx.fbcdn.net/v/t1.15752-9/218004207_367284434806857_5417100422287534545_n.png?_nc_cat=104&ccb=1-3&_nc_sid=ae9488&_nc_ohc=z5kK2LKw7EIAX9HHr00&_nc_ht=scontent-akl1-1.xx&oh=5e047a10485cc3e1b26acce004469be8&oe=612ACF78"
     imageElement.id = "duckycursor"
     imageElement.width = 25
@@ -29,14 +30,16 @@
     })
 
     //alert('You are about to be ducked!');
+    // Init size
+    chrome.runtime.sendMessage(currentWidth
+        , function (response) {
+    currentWidth = response;
+    imageElement.style.transform = "scale("+ currentWidth + ")"})
 
     //animation for size increase
 
-    var count = 0;
-    var j =0;
-    var currentWidth = 1;
-
     imageElement.style.transition =  "transform 500ms";
+    // For every click
     document.body.addEventListener('click', e =>{
         currentWidth *= 1.5;
         chrome.runtime.sendMessage(currentWidth

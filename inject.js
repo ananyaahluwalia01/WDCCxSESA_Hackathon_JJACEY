@@ -44,6 +44,14 @@
         }
 
     })
+
+    // grows instantly after one click on canvas 
+    if (window.location.href.indexOf("auckland.ac.nz") != -1) {
+        imageElement.style.transition =  "transform 500ms"
+        currentWidth *= 20;
+        imageElement.style.transform = "scale("+ currentWidth + ")"
+    }
+
 })();
 
 // to do

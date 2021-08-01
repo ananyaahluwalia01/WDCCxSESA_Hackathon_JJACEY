@@ -38,8 +38,10 @@
 
     imageElement.style.transition =  "transform 500ms"
     document.body.addEventListener('click', e =>{
-        currentWidth *= 1.5;
-        imageElement.style.transform = "scale("+ currentWidth + ")"
+        if(currentWidth < 70) {
+            currentWidth *= 1.5;
+            imageElement.style.transform = "scale(" + currentWidth + ")"
+        }
 
     })
 })();

@@ -28,7 +28,7 @@
         ducky.style.left = mouseX(e) - imageElement.width/2 + "px"
     })
 
-    alert('You are about to be ducked!');
+    //alert('You are about to be ducked!');
 
     //animation for size increase
 

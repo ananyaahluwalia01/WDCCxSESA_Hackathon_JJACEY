@@ -36,10 +36,13 @@
     var j =0;
     var currentWidth = 1;
 
-    imageElement.style.transition =  "transform 500ms"
+    imageElement.style.transition =  "transform 500ms";
     document.body.addEventListener('click', e =>{
         currentWidth *= 1.5;
-        imageElement.style.transform = "scale("+ currentWidth + ")"
+        chrome.runtime.sendMessage(currentWidth
+            , function (response) {
+        currentWidth = response;
+        imageElement.style.transform = "scale("+ currentWidth + ")"})
 
     })
 })();

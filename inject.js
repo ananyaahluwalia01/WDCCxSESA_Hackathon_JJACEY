@@ -1,6 +1,6 @@
 (function(){
     var imageElement = document.createElement("img")
-    imageElement.src = "https://media1.giphy.com/media/5be8JLZXiYQ4ubA90Q/giphy.gif?cid=790b7611b5b09296d95b8ce9c12bb796e565f4ee1dd9e463&rid=giphy.gif&ct=s"
+    imageElement.src = "https://scontent-akl1-1.xx.fbcdn.net/v/t1.15752-9/218004207_367284434806857_5417100422287534545_n.png?_nc_cat=104&ccb=1-3&_nc_sid=ae9488&_nc_ohc=z5kK2LKw7EIAX9HHr00&_nc_ht=scontent-akl1-1.xx&oh=5e047a10485cc3e1b26acce004469be8&oe=612ACF78"
     imageElement.id = "duckycursor"
     imageElement.width = 25
     imageElement.style.position = "fixed"
@@ -36,12 +36,13 @@
     var j =0;
     var currentWidth = 1;
 
-    imageElement.style.transition =  "transform 500ms"
+    imageElement.style.transition =  "transform 500ms";
     document.body.addEventListener('click', e =>{
-        if(currentWidth < 70) {
-            currentWidth *= 1.5;
-            imageElement.style.transform = "scale(" + currentWidth + ")"
-        }
+        currentWidth *= 1.5;
+        chrome.runtime.sendMessage(currentWidth
+            , function (response) {
+        currentWidth = response;
+        imageElement.style.transform = "scale("+ currentWidth + ")"})
 
     })
 

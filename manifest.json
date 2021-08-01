@@ -19,6 +19,6 @@
     }
   ],
   "browser_action": {
-    "default_icon": "quacker.PNG"
+    "default_icon": "quacker_square.PNG"
   }
 }

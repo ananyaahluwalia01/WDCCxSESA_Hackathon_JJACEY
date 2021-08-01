@@ -1,7 +1,7 @@
 (function(){
     var imageElement = document.createElement("img")
     var currentWidth = 1;
-    imageElement.src = "https://scontent-akl1-1.xx.fbcdn.net/v/t1.15752-9/218004207_367284434806857_5417100422287534545_n.png?_nc_cat=104&ccb=1-3&_nc_sid=ae9488&_nc_ohc=z5kK2LKw7EIAX9HHr00&_nc_ht=scontent-akl1-1.xx&oh=5e047a10485cc3e1b26acce004469be8&oe=612ACF78"
+    imageElement.src = "https://media4.giphy.com/media/5be8JLZXiYQ4ubA90Q/giphy.gif?cid=790b7611e9610dc9fab969cea56687e9c045d92a5430e097&rid=giphy.gif&ct=s"
     imageElement.id = "duckycursor"
     imageElement.width = 25
     imageElement.style.position = "fixed"
@@ -42,7 +42,7 @@
     // For every click
     document.body.addEventListener('click', e =>{
         if (currentWidth < 70) {
-            currentWidth *= 1.5;
+            currentWidth *= 1.1;
 
             chrome.runtime.sendMessage(currentWidth
                 , function (response) {
@@ -55,9 +55,16 @@
 
     // grows instantly after one click on canvas 
     if (window.location.href.indexOf("auckland.ac.nz") != -1) {
+        imageElement.src = "https://media1.giphy.com/media/HVL15iRon8yh17iwfV/giphy.gif?cid=790b761129f13c240b46038a13120cbe7cc067b51f2fecc8&rid=giphy.gif&ct=s"
         imageElement.style.transition =  "transform 500ms"
         currentWidth *= 20;
         imageElement.style.transform = "scale("+ currentWidth + ")"
+    }
+
+    // play quack sound on click
+    var audio = new Audio("https://wavlist.com/wav/duck-quack3.wav");
+    document.onclick = function() {
+        audio.play();
     }
 
 })();

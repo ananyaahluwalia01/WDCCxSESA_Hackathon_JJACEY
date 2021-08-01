@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     } else {
         previousImageWidth = request;
         if(request < 0) {
-            imageWidth = Math.abs(request)/1.5;
+            imageWidth = Math.abs(request)/1.3;
             console.log('Reduce size', imageWidth)
             sendResponse(imageWidth);    
         } else {

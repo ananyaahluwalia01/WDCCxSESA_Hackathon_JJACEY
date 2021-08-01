@@ -41,7 +41,7 @@
     imageElement.style.transition =  "transform 500ms";
     // For every click
     document.body.addEventListener('click', e =>{
-        if (currentWidth < 70) {
+        if (currentWidth < 70 && currentWidth >= 1) {
 
             const websiteUrl = window.location.href;
             console.log('Current website', websiteUrl)
@@ -51,6 +51,7 @@
                 currentWidth = -currentWidth;
             } else {
                 currentWidth *= 1.1;
+
             }
 
             chrome.runtime.sendMessage(currentWidth

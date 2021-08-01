@@ -41,11 +41,15 @@
     imageElement.style.transition =  "transform 500ms";
     // For every click
     document.body.addEventListener('click', e =>{
-        currentWidth *= 1.5;
-        chrome.runtime.sendMessage(currentWidth
-            , function (response) {
-        currentWidth = response;
-        imageElement.style.transform = "scale("+ currentWidth + ")"})
+        if (currentWidth < 70) {
+            currentWidth *= 1.5;
+
+            chrome.runtime.sendMessage(currentWidth
+                , function (response) {
+            currentWidth = response;
+            imageElement.style.transform = "scale("+ currentWidth + ")"})
+        }
+
 
     })
 

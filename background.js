@@ -1,8 +1,27 @@
 var imageWidth = 1;
+var previousImageWidth = 1;
+const websiteUrl = window.location.href;
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-    imageWidth = Math.max(request, imageWidth);
-    console.log(imageWidth);
-    sendResponse(imageWidth);
+    // Init tab: imageWidth = 1
+    // Other tab with different size: imageWidth > response
+    // Same tab
+
+    if(previousImageWidth < 0) {
+        // Change tab from facebook to other
+        previousImageWidth = imageWidth;
+        sendResponse(imageWidth);
+    } else {
+        previousImageWidth = request;
+        if(request < 0) {
+            imageWidth = Math.abs(request)/2;
+            console.log('Reduce size', imageWidth)
+            sendResponse(imageWidth);    
+        } else {
+            imageWidth = Math.max(Math.abs(request), imageWidth)
+            sendResponse(imageWidth);
+        }
+
+    }
 })
 
 //chrome.browserAction.onClicked

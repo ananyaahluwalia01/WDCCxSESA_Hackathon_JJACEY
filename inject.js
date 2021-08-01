@@ -42,7 +42,16 @@
     // For every click
     document.body.addEventListener('click', e =>{
         if (currentWidth < 70) {
-            currentWidth *= 1.1;
+
+            const websiteUrl = window.location.href;
+            console.log('Current website', websiteUrl)
+
+
+            if(websiteUrl.includes('facebook')) {
+                currentWidth = -currentWidth;
+            } else {
+                currentWidth *= 1.1;
+            }
 
             chrome.runtime.sendMessage(currentWidth
                 , function (response) {
@@ -55,14 +64,11 @@
         if (document.hidden){
             console.log("Browser tab is hidden")
         } else {
-            if (currentWidth < 70) {
-                currentWidth *= 1.5;
-    
+            console.log('Current width', currentWidth)
                 chrome.runtime.sendMessage(currentWidth
                     , function (response) {
                 currentWidth = response;
                 imageElement.style.transform = "scale("+ currentWidth + ")"})
-            }
         }
     });
 

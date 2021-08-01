@@ -49,9 +49,22 @@
             currentWidth = response;
             imageElement.style.transform = "scale("+ currentWidth + ")"})
         }
-
-
     })
+
+    document.addEventListener("visibilitychange", function() {
+        if (document.hidden){
+            console.log("Browser tab is hidden")
+        } else {
+            if (currentWidth < 70) {
+                currentWidth *= 1.5;
+    
+                chrome.runtime.sendMessage(currentWidth
+                    , function (response) {
+                currentWidth = response;
+                imageElement.style.transform = "scale("+ currentWidth + ")"})
+            }
+        }
+    });
 
     // grows instantly after one click on canvas 
     if (window.location.href.indexOf("auckland.ac.nz") != -1) {
